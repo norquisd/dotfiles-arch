@@ -1,6 +1,0 @@
-workspace.clearWatchman
-document.echoFiletype
-snippets.editSnippets
-snippets.openSnippetFiles
-python.sortImports
-python.setInterpreter
