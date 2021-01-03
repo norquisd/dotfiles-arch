@@ -29,7 +29,7 @@ set mouse=a
 
 let g:ale_disable_lsp=1
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/autoload/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chrisbra/vim-commentary'
