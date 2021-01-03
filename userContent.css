@@ -1,0 +1,107 @@
+/*================ GLOBAL COLORS ================*/
+:root {
+	--night_color1: #282828;
+	--night_color2: #3c3836;
+	--night_color3: #504945;
+	--night_color4: #665c54;
+	
+	--snow_color1: #d5c4a1;
+	--snow_color2: #ebdbb2;
+	--snow_color3: #fbf1c7;
+	
+	--frost_color1: #7c6f64;
+	--frost_color2: #928374;
+	--frost_color3: #a89984;
+	--frost_color4: #bdae93;
+	
+	--aurora_color1: #cc241d;
+	--aurora_color2: #d65d0e;
+	--aurora_color3: #d79921;
+	--aurora_color4: #8ec07c;
+	--aurora_color5: #b16286;
+}
+
+@media (prefers-color-scheme: dark) {
+:root {
+	--page_bg_color: var(--night_color1);
+	--search_bg_color: var(--night_color2);
+	--search_border_color: var(--night_color3);
+	--search_border_active_color: var(--night_color4);
+	--search_txt_color: var(--frost_color3);
+	scrollbar-color: var(--night-color2) var(frost_color1);
+}
+}
+
+@media (prefers-color-scheme: light) {
+:root {
+	--page_bg_color: var(--night_color1);
+	--search_bg_color: var(--night_color2);
+	--search_border_color: var(--night_color3);
+	--search_border_active_color: var(--night_color4);
+	--search_txt_color: var(--frost_color3);
+	scrollbar-color: var(--night-color2) var(frost_color1);
+}
+}
+/* @media (prefers-color-scheme: light) { */
+/* :root { */
+/* --page_bg_color: var(--snow_color1); */
+/* --search_bg_color: var(--snow_color2); */
+/* --search_border_color: var(--snow_color3); */
+/* --search_border_active_color: var(--snow_color3); */
+/* --search_txt_color: var(--night_color4); */
+/* } */
+/* } */
+
+/*================== NEW TAB BG COLOR ==================*/
+@-moz-document url("about:newtab"), url("about:home"), url("about:blank") {
+ body.activity-stream { background-color: var(--page_bg_color) !important;}
+}
+
+/*================== SEARCH BAR ==================*/
+.search-wrapper input {
+	transition: all 0.3s ease !important;
+    background: var(--search_bg_color) var(--newtab-search-icon) 12px center no-repeat !important;
+	background-size: 20px !important;
+	border: 1px solid !important;
+	border-color: var(--search_border_color) !important;
+	box-shadow: none !important;
+	color: var(--search_txt_color) !important;
+}
+.search-wrapper .search-inner-wrapper:hover input,
+.search-wrapper .search-inner-wrapper:active input,
+.search-wrapper input:focus {
+	border-color: var(--search_border_active_color) !important;
+}
+
+.search-wrapper .search-button,
+.search-wrapper .search-button {
+	transition: all 0.3s ease !important;
+	fill: var(--search_txt_color) !important;
+}
+.search-wrapper .search-button:focus,
+.search-wrapper .search-button:hover {
+    background-color: var(--search_border_active_color) !important;
+}
+
+/*================== SEARCH BAR RESULTS ==================*/
+.contentSearchSuggestionTable .contentSearchSuggestionsContainer,
+.contentSearchSuggestionTable .contentSearchHeader {
+    background-color: var(--search_bg_color) !important;
+	color: var(--search_txt_color) !important;
+}
+.contentSearchSuggestionTable .contentSearchSuggestionRow.selected,
+.contentSearchSuggestionTable .contentSearchOneOffItem.selected {
+	background-color: var(--search_border_color) !important;
+}
+
+.contentSearchSuggestionTable .contentSearchHeader,
+.contentSearchSuggestionTable .contentSearchSettingsButton,
+.contentSearchSuggestionTable .contentSearchOneOffsTable {
+	border-color: var(--search_border_color) !important;
+}
+
+.contentSearchSuggestionTable {
+	box-shadow: none !important;
+	border: 1px solid var(--search_border_color) !important;
+	border-radius: 3px !important;
+}
