@@ -3,8 +3,6 @@ syntax enable
 source ~/.config/nvim/plug-config/coc.vim
 source ~/.config/nvim/plug-config/startify.vim
 
-let g:python3_host_prog = expand('/usr/bin/python3.9')
-
 
 set nowrap
 set encoding=utf-8

@@ -53,3 +53,4 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 xsetroot -cursor_name left_ptr
 # exec startxfce4
 exec bspwm
+# exec startplasma-x11
