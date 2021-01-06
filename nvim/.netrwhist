@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =7
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/quinn/.config'
 let g:netrw_dirhist_7='/home/quinn/.zsh'
 let g:netrw_dirhist_6='/home/quinn/classes/csci5521/midterm3'
 let g:netrw_dirhist_5='/home/quinn/.config'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_2='/home/quinn/.config'
 let g:netrw_dirhist_1='/home/quinn/.config/nvcode_nvim/vim-plug'
 let g:netrw_dirhist_0='/home/quinn/classes/math4281/nov/nov30'
 let g:netrw_dirhist_9='/home/quinn/.zsh/zsh-dircolors/dircolors'
-let g:netrw_dirhist_8='/home/quinn/classes/math5485/hw2'
