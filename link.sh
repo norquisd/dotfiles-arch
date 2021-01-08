@@ -34,5 +34,5 @@ ln -s $DOTFILES/zathura ~/.config/zathura
 #picom
 ln $DOTFILES/picom.conf ~/.config/picom.conf
 
-#alacritty
-ln $DOTFILES/alacritty.yml ~/.config/alacritty.yml
+#kitty
+ln -s $DOTFILES/kitty ~/.config/kitty
