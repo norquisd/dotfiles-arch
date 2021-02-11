@@ -1,4 +1,5 @@
 {
-	"python.jediPath": "/home/quinn/.local/lib/python3.9/site-packages/jedi",
-	"diagnostic.displayByAle": true
+	"coc.preferences.formatOnSaveFiletypes": ["python"],
+	"python.formatting.provider": "black",
+	"python.linting.Enabled": false
 }

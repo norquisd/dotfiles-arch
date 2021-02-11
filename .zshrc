@@ -15,6 +15,9 @@ promptinit
 # End of lines added by compinstall
 
 alias ls='ls --color=auto'
-alias grep='grep --color=auto'
+alias grep='grep --color=auto -A 0'
+alias lsblk='lsblk -e7'
 
-PROMPT='%F{white}[%f%F{49}%n%f%F{blue}@%f%F{red}%m%f %F{blue}%B%~%b%f%F{white}]%f$ '
+export PATH=$PATH:/home/quinn/.local/bin
+
+PROMPT='%F{white}[%f%F{blue}%n%f%F{white}@%f%F{213}%m%f %F{red}%B%~%b%f%F{white}]%f$ '

@@ -17,6 +17,7 @@ set noerrorbells
 set background=dark
 set undodir=~/.vim/undodir
 set undofile
+set termguicolors
 set undolevels=1000
 set undoreload=10000
 set formatoptions-=cro
@@ -36,15 +37,19 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'dense-analysis/ale'
-Plug 'morhetz/gruvbox'
 Plug 'mhinz/vim-startify'
+Plug 'sheerun/vim-polyglot'
+
 Plug 'junegunn/goyo.vim'
-Plug 'sainnhe/forest-night'
+Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/forest-night'
+Plug 'sickill/vim-monokai'
+Plug 'sainnhe/sonokai'
 
 call plug#end()
 
-colorscheme gruvbox-material
+colorscheme sonokai
 " better tex syntax higlighting
 " highlight texMathMatcher ctermfg = Green
 " highlight texMathZoneAmsAs ctermfg = Green
@@ -129,6 +134,17 @@ let g:vimtex_view_method = 'zathura'
 let g:vimtex_quickfix_mode = 0
 set conceallevel=1
 let g:tex_conceal = 'abdmg'
+let g:vimtex_compiler_latexmk = {
+    \ 'options' : [
+    \   '-pdf',
+    \   '-shell-escape',
+    \   '-verbose',
+    \   '-file-line-error',
+    \   '-synctex=1',
+    \   '-interaction=nonstopmode',
+    \ ],
+    \}
+
 
 let g:ale_linters_explicit = 1
 let g:ale_python_flake8_options='--ignore=E501,W503'
