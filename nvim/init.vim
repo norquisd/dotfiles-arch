@@ -5,7 +5,6 @@ source ~/.config/nvim/plug-config/startify.vim
 
 
 set nowrap
-set encoding=utf-8
 set nu
 set relativenumber
 set smarttab
@@ -15,7 +14,7 @@ set smartindent
 set autoindent
 set noerrorbells
 set background=dark
-set undodir=~/.vim/undodir
+set undodir=~/.config/nvim/undodir
 set undofile
 set termguicolors
 set undolevels=1000
@@ -32,7 +31,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chrisbra/vim-commentary'
-Plug 'lervag/vimtex', {'tag': 'v1.6'}
+" Plug 'lervag/vimtex', {'tag': 'v1.6'}
+Plug 'lervag/vimtex'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -44,7 +44,6 @@ Plug 'junegunn/goyo.vim'
 Plug 'morhetz/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/forest-night'
-Plug 'sickill/vim-monokai'
 Plug 'sainnhe/sonokai'
 
 call plug#end()
