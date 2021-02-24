@@ -36,3 +36,6 @@ ln $DOTFILES/picom.conf ~/.config/picom.conf
 
 #kitty
 ln -sfn $DOTFILES/kitty ~/.config/kitty
+
+#scripts
+ln -sfn $DOTFILES/scripts ~/.config/scripts
