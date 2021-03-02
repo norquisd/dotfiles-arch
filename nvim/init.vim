@@ -14,7 +14,7 @@ set shiftwidth=4
 set smartindent
 set autoindent
 set noerrorbells
-set background=dark
+set background=light
 set undodir=~/.vim/undodir
 set undofile
 set termguicolors
@@ -26,7 +26,7 @@ set timeoutlen=500
 set laststatus=0
 set mouse=a
 
-let g:ale_disable_lsp=1
+" let g:ale_disable_lsp=1
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
@@ -36,9 +36,10 @@ Plug 'lervag/vimtex', {'tag': 'v1.6'}
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 Plug 'mhinz/vim-startify'
 Plug 'sheerun/vim-polyglot'
+Plug 'Chiel92/vim-autoformat'
 
 Plug 'junegunn/goyo.vim'
 Plug 'morhetz/gruvbox'
@@ -46,10 +47,13 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/forest-night'
 Plug 'sickill/vim-monokai'
 Plug 'sainnhe/sonokai'
+Plug 'sainnhe/edge'
 
 call plug#end()
 
-colorscheme sonokai
+let g:edge_style='aura'
+colorscheme edge
+
 " better tex syntax higlighting
 " highlight texMathMatcher ctermfg = Green
 " highlight texMathZoneAmsAs ctermfg = Green
@@ -84,8 +88,8 @@ highlight clear Conceal
 nnoremap <Space> "
 
 map <F9> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+            \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+            \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
 
 "alternate Esc and save
 inoremap <C-c> <Esc>
@@ -118,12 +122,15 @@ let g:UltiSnipsExpandTrigger="<C-l>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
+" noremap <F3> :Autoformat<CR>
+au BufWrite * :Autoformat
+
 augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 
@@ -135,44 +142,44 @@ let g:vimtex_quickfix_mode = 0
 set conceallevel=1
 let g:tex_conceal = 'abdmg'
 let g:vimtex_compiler_latexmk = {
-    \ 'options' : [
-    \   '-pdf',
-    \   '-shell-escape',
-    \   '-verbose',
-    \   '-file-line-error',
-    \   '-synctex=1',
-    \   '-interaction=nonstopmode',
-    \ ],
-    \}
+            \ 'options' : [
+            \   '-pdf',
+            \   '-shell-escape',
+            \   '-verbose',
+            \   '-file-line-error',
+            \   '-synctex=1',
+            \   '-interaction=nonstopmode',
+            \ ],
+            \}
 
 
-let g:ale_linters_explicit = 1
-let g:ale_python_flake8_options='--ignore=E501,W503'
-let b:ale_fixers = {'python': ['black']}
-let g:ale_linters = {
-\   'python': ['flake8'],
-\}
+" let g:ale_linters_explicit = 1
+" let g:ale_python_flake8_options='--ignore=E501,W503'
+" let b:ale_fixers = {'python': ['black']}
+" let g:ale_linters = {
+" \   'python': ['flake8'],
+" \}
 
 function! s:goyo_enter()
-  if executable('tmux') && strlen($TMUX)
-    silent !tmux set status off
-    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
-  endif
-  set noshowmode
-  set noshowcmd
-  set scrolloff=999
-  " ...
+    if executable('tmux') && strlen($TMUX)
+        silent !tmux set status off
+        silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
+    endif
+    set noshowmode
+    set noshowcmd
+    set scrolloff=999
+    " ...
 endfunction
 
 function! s:goyo_leave()
-  if executable('tmux') && strlen($TMUX)
-    silent !tmux set status on
-    silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
-  endif
-  set showmode
-  set showcmd
-  set scrolloff=5
-  " ...
+    if executable('tmux') && strlen($TMUX)
+        silent !tmux set status on
+        silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
+    endif
+    set showmode
+    set showcmd
+    set scrolloff=5
+    " ...
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()

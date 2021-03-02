@@ -26,7 +26,7 @@ set statusbar-fg                "#e2e2e3" # fg
 
 set highlight-color             "#fabd2f" # bright:yellow
 set highlight-active-color      "#fe8019" # bright:orange
-set highlight-transparency		0
+set highlight-transparency		0.5
 
 set default-bg                  "#000000" # bg
 set default-fg                  "#e2e2e3" # fg
@@ -37,6 +37,6 @@ set render-loading-fg           "#e2e2e3" # fg
 # Recolor book content's color
 set recolor-lightcolor          "#2c2e34" # bg
 set recolor-darkcolor           "#e2e2e3" # fg
-set recolor                     "true"
+# set recolor                     "true"
 # set recolor-keephue             true      # keep original color
 set selection-clipboard clipboard
