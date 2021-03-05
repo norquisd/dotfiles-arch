@@ -39,7 +39,8 @@ For some information on the snippets, I copied them mostly from [gillescastel](h
 
 # gnome
 
-![screenshot](screenshot1.png?raw=true "Title")
+![screenshot2](screenshot2.png?raw=true)
+![screenshot1](screenshot1.png?raw=true)
 
 To get my gnome setup, you'll want to install the package **gnome-tweaks** if you don't already have it. Then, I use [arc-dark](https://github.com/arc-design/arc-theme) as my gtk theme and gnome-shell theme, and [Tela Icons](https://github.com/vinceliuice/Tela-icon-theme) as my icon theme. Also, I use [vimix-cursors](https://github.com/vinceliuice/Vimix-cursors) as my cursor.
 
