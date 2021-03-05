@@ -42,7 +42,7 @@ For some information on the snippets, I copied them mostly from [gillescastel](h
 ![screenshot2](screenshot2.png?raw=true)
 ![screenshot1](screenshot1.png?raw=true)
 
-To get my gnome setup, you'll want to install the package **gnome-tweaks** if you don't already have it. Then, I use [arc-dark](https://github.com/arc-design/arc-theme) as my gtk theme and gnome-shell theme, and [Tela Icons](https://github.com/vinceliuice/Tela-icon-theme) as my icon theme. Also, I use [vimix-cursors](https://github.com/vinceliuice/Vimix-cursors) as my cursor.
+To get my gnome setup, you'll want to install the package **gnome-tweaks** if you don't already have it. Then, I use [arc-dark](https://github.com/arc-design/arc-theme) as my gtk theme and gnome-shell theme, and [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) as my icon theme. Also, I use [vimix-cursors](https://github.com/vinceliuice/Vimix-cursors) as my cursor.
 
 Probably the most useful extension I have found on gnome is System76's [tiling-extension](https://github.com/pop-os/shell). I would recommend installing this, and configuring the keyboard shortcuts to your liking.
 
