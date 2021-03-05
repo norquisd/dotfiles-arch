@@ -39,7 +39,7 @@ For some information on the snippets, I copied them mostly from [gillescastel](h
 
 # gnome
 
-
+![screenshot](screenshot1.png?raw=true "Title")
 
 To get my gnome setup, you'll want to install the package **gnome-tweaks** if you don't already have it. Then, I use [arc-dark](https://github.com/arc-design/arc-theme) as my gtk theme and gnome-shell theme, and [Tela Icons](https://github.com/vinceliuice/Tela-icon-theme) as my icon theme. Also, I use [vimix-cursors](https://github.com/vinceliuice/Vimix-cursors) as my cursor.
 
@@ -47,7 +47,7 @@ Probably the most useful extension I have found on gnome is System76's [tiling-e
 
 If you haven't used a tiling manager before, having good keyboard shortcuts for window navigation and workspaces is crucial. Typically, one would use something like *super+h,j,k,l* or *super+up,down,left,right* for window navigation, and *super+1* to move to workspace 1, *super+2* to move to workspace 2, etc. Then maybe something like *super+shift+1* to move your active window to workspace 1 and so on. Personally, I use 4 static workspaces, rather than dynamic workspaces, which you can enable via gnome-tweaks -> Workspaces. Finally, you'd probably want to come up with some keyboard shortcuts for frequently used applications, like a terminal, browser, file explorer, etc.
 
-If you want exactly the setup that I have in the picture, then here are the other extensions I use:
+If you want exactly the setup that I have in my screenshots, then here are the other extensions I use:
 
 - [dynamic-panel-transparency](https://extensions.gnome.org/extension/1011/dynamic-panel-transparency/) for the transparent top bar (I use full transparency at all times, and I also tick "Remove excess panel styling" to get rid of some glitches with the arc theme).
 - [coverflow alt-tab](https://extensions.gnome.org/extension/97/coverflow-alt-tab/)
