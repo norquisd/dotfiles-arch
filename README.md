@@ -38,7 +38,7 @@ Note that I use *ctl-j*, *ctl-k* for snippet menu navigation, and *ctl-l* for sn
 For some information on the snippets, I copied them mostly from [gillescastel](https://github.com/gillescastel/latex-snippets "fillescastro"). He has an explanation of how these work [here](https://castel.dev/post/lecture-notes-1/).
 
 # fonts
-The font I use for my terminal (and hence ranger, neovim etc) is (FiraCode)[https://github.com/tonsky/FiraCode]. You can install it via
+The font I use for my terminal (and hence ranger, neovim etc) is [FiraCode](https://github.com/tonsky/FiraCode). You can install it via
 ```bash
 apt install fonts-firacode
 ```
