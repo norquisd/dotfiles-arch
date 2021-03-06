@@ -4,18 +4,8 @@ extends texmath
 
 global !p
 
-texMathZones = ['texMathZone' + x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z', 'AmsA', 'AmsB', 'AmsC', 'AmsD', 'AmsE', 'AmsF', 'AmsG', 'AmsAS', 'AmsBS', 'AmsCS', 'AmsDS', 'AmsES', 'AmsFS', 'AmsGS' ]]
-texIgnoreMathZones = ['texMathText']
-texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
-texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
-ignore = texIgnoreMathZoneIds[0]
 def math():
-	synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
-	try:
-		first = next(i for i in reversed(synstackids) if i in texIgnoreMathZoneIds or i in texMathZoneIds)
-		return first != ignore
-	except StopIteration:
-		return False
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
 
 def create_table(snip):
 	rows = snip.buffer[snip.line].split('x')[0]
@@ -46,32 +36,34 @@ def create_table(snip):
 # Define matrix size in terms of rows/columns
 
 def mat(snip):
-        matrix_str = (snip.buffer[snip.line].split('mat')[0]+'matrix').strip()
+	matrix_str = (snip.buffer[snip.line].split('mat')[0]+'matrix').strip()
 
-        rows = 'x'.join(snip.buffer[snip.line].split("x", 2)[:-1])
-        cols = 'x'.join(snip.buffer[snip.line].split("x", 2)[-1:])
+	rows = 'x'.join(snip.buffer[snip.line].split("x", 2)[:-1])
+	cols = 'x'.join(snip.buffer[snip.line].split("x", 2)[-1:])
 
-        int_val = lambda string: int(''.join(s for s in string if s.isdigit()))
+	int_val = lambda string: int(''.join(s for s in string if s.isdigit()))
 
-        rows = int_val(rows)
-        cols = int_val(cols)
+	rows = int_val(rows)
+	cols = int_val(cols)
 
-        offset = cols + 1
-        old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind('\t') + 1]
+	offset = cols + 1
+	old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind('\t') + 1]
 
-        snip.buffer[snip.line] = ''
+	snip.buffer[snip.line] = ''
 
-        final_str = old_spacing + "\\begin{"+matrix_str+"}\n"
+	final_str = old_spacing + "\\begin{"+matrix_str+"}\n"
 
-        for i in range(rows):
-                final_str += old_spacing + '\t'
-                final_str += " & ".join(['$' + str(i * cols + j + offset) for j in range(cols)])
+	for i in range(rows):
+		final_str += old_spacing + '\t'
+		final_str += " & ".join(['$' + str(i * cols + j + offset) for j in range(cols)])
+		if(i != (rows-1)):
+			final_str += " \\\\\\\n"
+		else:
+			final_str += " \n"
 
-                final_str += " \\\\\\\n"
+	final_str += old_spacing + "\\end{"+matrix_str+"}$0"
 
-        final_str += old_spacing + "\\end{"+matrix_str+"}\n$0"
-
-        snip.expand_anon(final_str)
+	snip.expand_anon(final_str)
 
 def add_row(snip):
 	row_len = int(''.join(s for s in snip.buffer[snip.line] if s.isdigit()))
@@ -187,6 +179,7 @@ snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rw
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
+context "math()"
 snippet notin "not in " iA
 \not \in 
 endsnippet
@@ -252,6 +245,15 @@ snippet enum "Enumerate" b
 \begin{enumerate}
 	\item $0
 \end{enumerate}
+endsnippet
+
+snippet mat_op "Matrix Operation Command" b
+\newcommand{\grstep}[2][\relax]{%
+	\ensuremath{\mathrel{
+		{\mathop{\longrightarrow}\limits^{#2\mathstrut}_{
+			\begin{subarray}{l} #1 \end{subarray}}}}}}
+\newcommand{\swap}{\leftrightarrow}
+$0
 endsnippet
 
 snippet item "Itemize" b
@@ -380,9 +382,16 @@ snippet ... "Ellipses" iA
 \ldots $0
 endsnippet
 
+snippet tcolorbox "tcolorbox Environment" b
+\begin{tcolorbox}
+$1
+\end{tcolorbox}
+$0
+endsnippet
+
 snippet homework "Homework Template"
 \documentclass{article}
-\usepackage{amsmath,amssymb,amsthm,mathrsfs,graphicx,minted}
+\usepackage{amsmath,amssymb,amsthm,mathrsfs,graphicx,minted,tcolorbox}
 
 \title{$1\\\\$2}
 \author{Quinten Norton\\\\University of Minnesota}
