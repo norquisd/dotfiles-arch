@@ -27,7 +27,7 @@ pacman -S zathura-pdf-mupdf
 ```
 (you may need to do this on debian as well, I'm not sure). 
 
-Vimtex supports compile-on-save, and synctex. Synctex should work both forwards and backwards out of the box. You can forward search with **leader + lv** and backward search by **ctl+left click** on the appropriate text in zathura.
+Vimtex supports compile-on-save, and synctex. You'll need to install [neovim-remote](https://github.com/mhinz/neovim-remote) for synctex support. You can forward search with **leader + lv** and backward search by **ctl+left click** on the appropriate text in zathura.
 
 If you would like to view a pdf without the recoloring, you can type **:set recolor** in zathura, or remove the corresponding line in zathurarc.
 
