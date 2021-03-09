@@ -51,7 +51,7 @@ Plug 'junegunn/goyo.vim'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'sainnhe/gruvbox-material'
 " Plug 'sainnhe/forest-night'
-Plug 'sainnhe/sonokai'
+Plug 'norquisd/sonokai'
 " Plug 'sainnhe/edge'
 
 call plug#end()
