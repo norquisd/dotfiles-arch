@@ -56,6 +56,7 @@ Plug 'sainnhe/sonokai'
 
 call plug#end()
 
+let g:sonokai_style = 'arc'
 colorscheme sonokai
 
 highlight clear Conceal
