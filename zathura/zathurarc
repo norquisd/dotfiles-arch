@@ -37,6 +37,6 @@ set render-loading-fg           "#d3dae3" # fg
 # Recolor book content's color
 set recolor-lightcolor          "#383c4a" # bg
 set recolor-darkcolor           "#d3dae3" # fg
-set recolor                     "true"
+/* set recolor                     true */
 # set recolor-keephue             true      # keep original color
 set selection-clipboard clipboard

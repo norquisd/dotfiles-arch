@@ -48,7 +48,7 @@ Plug 'junegunn/goyo.vim'
 
 " Some colorschemes
 
-" Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim'
 " Plug 'sainnhe/gruvbox-material'
 " Plug 'sainnhe/forest-night'
 Plug 'norquisd/sonokai'

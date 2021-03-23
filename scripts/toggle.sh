@@ -17,3 +17,4 @@ then
 else
 	gsettings set org.gnome.shell.extensions.pop-shell show-title false	
 fi
+
