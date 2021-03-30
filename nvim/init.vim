@@ -34,10 +34,16 @@ set mouse=a
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" nvim 0.5 
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'nvim-lua/completion-nvim'
+" Plug 'hrsh7th/nvim-compe'
+Plug 'nvim-treesitter/nvim-treesitter'
+
+
+Plug 'neoclide/coc.nvim' 
 Plug 'chrisbra/vim-commentary'
 Plug 'lervag/vimtex'
-Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'SirVer/ultisnips' 
 Plug 'honza/vim-snippets'
 " Plug 'dense-analysis/ale'
@@ -48,7 +54,7 @@ Plug 'junegunn/goyo.vim'
 
 " Some colorschemes
 
-Plug 'arcticicestudio/nord-vim'
+" Plug 'arcticicestudio/nord-vim'
 " Plug 'sainnhe/gruvbox-material'
 " Plug 'sainnhe/forest-night'
 Plug 'norquisd/sonokai'
@@ -56,13 +62,18 @@ Plug 'norquisd/sonokai'
 
 call plug#end()
 
+
 let g:sonokai_style = 'arc'
 colorscheme sonokai
 
+" source ~/.config/nvim/plug-config/lsp-config.vim
+" source ~/.config/nvim/plug-config/completion-config.vim
+" luafile ~/.config/nvim/lua/compe-config.lua
+" luafile ~/.config/nvim/lua/lsp-servers.lua
+
 highlight clear Conceal
 
-" change register key
-nnoremap <Space> "
+let g:mapleader = "\<Space>"
 
 "alternate Esc and save
 inoremap <C-c> <Esc>
@@ -76,6 +87,10 @@ noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
 noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
+
+" move between buffers
+nnoremap <C-b> :bnext<CR>
+nnoremap <C-B> :bnext<CR>
 
 " page up/down
 nnoremap <S-j> <C-d>
