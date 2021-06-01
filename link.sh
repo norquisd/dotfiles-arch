@@ -39,3 +39,6 @@ ln -sfn $DOTFILES/kitty ~/.config/kitty
 
 #scripts
 ln -sfn $DOTFILES/scripts ~/.config/scripts
+
+# awesome
+ln -sfn $DOTFILES/awesome ~/.config/awesome

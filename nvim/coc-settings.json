@@ -1,6 +1,7 @@
 {
 	"jedi.executable.command": "/home/quinn/.local/bin/jedi-language-server",
-	"coc.preferences.formatOnSaveFiletypes": ["python"],
-	"python.formatting.provider": "black"
+/* "coc.preferences.formatOnSaveFiletypes": ["python"], */
+	"python.formatting.provider": "black",
+	"lua.version": "5.3"
 
 }

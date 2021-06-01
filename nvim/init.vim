@@ -41,7 +41,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 Plug 'nvim-treesitter/nvim-treesitter'
 
 
-Plug 'neoclide/coc.nvim' 
+Plug 'neoclide/coc.nvim'
 Plug 'chrisbra/vim-commentary'
 Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips' 
@@ -58,6 +58,7 @@ Plug 'junegunn/goyo.vim'
 " Plug 'sainnhe/gruvbox-material'
 " Plug 'sainnhe/forest-night'
 Plug 'norquisd/sonokai'
+Plug 'kaicataldo/material.vim'
 " Plug 'sainnhe/edge'
 
 call plug#end()
@@ -71,7 +72,7 @@ colorscheme sonokai
 " luafile ~/.config/nvim/lua/compe-config.lua
 " luafile ~/.config/nvim/lua/lsp-servers.lua
 
-highlight clear Conceal
+" highlight clear Conceal
 
 let g:mapleader = "\<Space>"
 
@@ -114,7 +115,6 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 let g:vimtex_compiler_progname = 'nvr'
 let g:tex_flavor = 'latex'
-let g:vimtex_latexmk_continuous = 1
 let g:vimtex_view_method = 'zathura'
 " hides menu showing errors, can bring up menu with :copen
 let g:vimtex_quickfix_mode = 0

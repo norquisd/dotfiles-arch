@@ -20,6 +20,7 @@ bspc config focus_follows_pointer true
 bspc rule -a Zathura state=tiled
 
 feh --bg-scale ~/Pictures/wallpapers/0313.jpg
+xsetroot -cursor_name left_ptr &
 $HOME/.config/polybar/launch.sh
 picom --experimental-backends
 dunst
