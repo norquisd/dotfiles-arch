@@ -17,7 +17,11 @@ promptinit
 alias ls='ls --color=auto'
 alias grep='grep --color=auto -A 0'
 alias lsblk='lsblk -e7'
+alias python='ipython'
 
 export PATH=$PATH:/home/quinn/.local/bin
+export MANPAGER="nvim -c 'set ft=man' -" 
+export EDITOR="nvim" 
 
-PROMPT='%F{white}[%f%F{blue}%n%f%F{white}@%f%F{213}%m%f %F{red}%B%~%b%f%F{white}]%f$ '
+# PROMPT='%F{white}[%f%F{red}%n%f%F{white}@%f%F{magenta}%m%f %F{cyan}%B%~%b%f%F{white}]%f$ '
+PROMPT='%F{cyan}%n%f%F{white}@%f%F{white}%m%f %F{cyan}%B%~%b%f %% '
