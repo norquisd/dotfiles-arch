@@ -85,6 +85,7 @@ m4
 make
 man-db
 man-pages
+mcmojave-cursors
 mutter
 nautilus
 neovim
