@@ -23,6 +23,7 @@ gcc
 gdm
 gedit
 git
+github-cli
 gnome-backgrounds
 gnome-books
 gnome-boxes
