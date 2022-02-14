@@ -1,7 +1,7 @@
 " unnecessary with treesitter?
 syntax enable
 
-source ~/.config/nvim/plug-config/coc.vim
+" source ~/.config/nvim/plug-config/coc.vim
 source ~/.config/nvim/plug-config/startify.vim
 
 
@@ -41,7 +41,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 Plug 'nvim-treesitter/nvim-treesitter'
 
 
-Plug 'neoclide/coc.nvim'
+" Plug 'neoclide/coc.nvim'
 Plug 'chrisbra/vim-commentary'
 Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips' 
@@ -57,15 +57,15 @@ Plug 'junegunn/goyo.vim'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'sainnhe/gruvbox-material'
 " Plug 'sainnhe/forest-night'
-" Plug 'norquisd/sonokai'
+Plug 'norquisd/sonokai'
 Plug 'kaicataldo/material.vim'
 " Plug 'sainnhe/edge'
 
 call plug#end()
 
-
-let g:sonokai_style = 'arc'
-colorscheme sonokai
+" let g:sonokai_style = 'arc'
+let g:material_theme_style='darker'
+colorscheme material
 
 " source ~/.config/nvim/plug-config/lsp-config.vim
 " source ~/.config/nvim/plug-config/completion-config.vim
@@ -90,8 +90,8 @@ noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 
 " move between buffers
-nnoremap <C-b> :bnext<CR>
-nnoremap <C-B> :bnext<CR>
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprev<CR>
 
 " page up/down
 nnoremap <S-j> <C-d>
